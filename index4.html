@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TeslaScripts</title>
 
   <!-- AdMaven Placement Code -->
   <meta name="admaven-placement" content="BqjwErdw8">
 
+  <title>TeslaScripts</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: "Poppins", sans-serif;
       background: radial-gradient(circle at top, #1a0b2e, #4b0b65, #8a0bb7, #ff5ee0);
@@ -25,7 +24,6 @@
       overflow: hidden;
       position: relative;
     }
-
     body::before {
       content: '';
       position: absolute;
@@ -45,11 +43,7 @@
         1700px 50px #fff;
       animation: moveStars 60s linear infinite;
     }
-
-    @keyframes moveStars {
-      0% { transform: translate(0,0); }
-      100% { transform: translate(-800px,-800px); }
-    }
+    @keyframes moveStars { 0% { transform: translate(0,0); } 100% { transform: translate(-800px,-800px); } }
 
     .container {
       position: relative;
@@ -66,106 +60,28 @@
       z-index: 1;
     }
 
-    .big-title {
-      font-size: 3rem;
-      font-weight: 800;
-      color: #ff8cff;
-      margin-bottom: 0.3rem;
-      text-shadow: 0 0 15px #ff79ff, 0 0 30px #ff00f7;
-    }
+    .big-title { font-size: 3rem; font-weight: 800; color: #ff8cff; margin-bottom: 0.3rem; text-shadow: 0 0 15px #ff79ff, 0 0 30px #ff00f7; }
 
-    .header {
-      border: 3px double rgba(255,255,255,0.5);
-      border-radius: 15px;
-      padding: 1rem 0.5rem;
-      margin-bottom: 1rem;
-    }
+    .header { border: 3px double rgba(255,255,255,0.5); border-radius: 15px; padding: 1rem 0.5rem; margin-bottom: 1rem; }
+    .header h1 { font-size: 1.8rem; font-weight: 700; color: #ff8cff; margin-bottom: 0.2rem; letter-spacing: 1.5px; }
+    .header p { font-size: 1rem; font-weight: 500; color: #d0a0ff; }
 
-    .header h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #ff8cff;
-      margin-bottom: 0.2rem;
-      letter-spacing: 1.5px;
-    }
+    #progress-text { margin-bottom: 1rem; font-weight: 600; color: #ffb3ff; }
 
-    .header p {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #d0a0ff;
-    }
+    .progress { background: rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; height: 14px; margin-bottom: 1rem; width: 100%; }
+    .progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, #ff9fff, #ff00f7); transition: width 0.4s ease; }
 
-    #progress-text {
-      margin-bottom: 1rem;
-      font-weight: 600;
-      color: #ffb3ff;
-    }
-
-    .progress {
-      background: rgba(255,255,255,0.1);
-      border-radius: 12px;
-      overflow: hidden;
-      height: 14px;
-      margin-bottom: 1rem;
-      width: 100%;
-    }
-
-    .progress-bar {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #ff9fff, #ff00f7);
-      transition: width 0.4s ease;
-    }
-
-    .btn {
-      display: inline-block;
-      background: linear-gradient(90deg, #ff00f7, #ff79ff);
-      color: #fff;
-      border: none;
-      padding: 1em 2em;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      cursor: pointer;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-      transition: transform 0.18s ease, opacity 0.25s ease;
-      margin: 8px 6px;
-      text-decoration: none;
-    }
-
+    .btn { display: inline-block; background: linear-gradient(90deg, #ff00f7, #ff79ff); color: #fff; border: none; padding: 1em 2em; border-radius: 12px; font-weight: 600; font-size: 1.1rem; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.4); transition: transform 0.18s ease, opacity 0.25s ease; margin: 8px 6px; text-decoration: none; }
     .btn:hover:not(:disabled) { transform: translateY(-2px); opacity: 0.95; }
     .btn:disabled { opacity: 0.5; cursor: default; }
 
-    .download-btn {
-      display: none;
-      margin-top: 1em;
-      padding: 1em 2em;
-      background: linear-gradient(90deg, #ff79ff, #ff00f7);
-      color: #fff;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-decoration: none;
-      transition: transform 0.2s ease, opacity 0.3s ease;
-    }
-
+    .download-btn { display: none; margin-top: 1em; padding: 1em 2em; background: linear-gradient(90deg, #ff79ff, #ff00f7); color: #fff; border-radius: 12px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: transform 0.2s ease, opacity 0.3s ease; }
     .download-btn:hover { transform: translateY(-2px); opacity: 0.9; }
 
-    #hidden-content {
-      display: none;
-      margin-top: 1.5em;
-      background: rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 1rem;
-      animation: fadeIn 0.5s ease;
-    }
+    #hidden-content { display: none; margin-top: 1.5em; background: rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem; animation: fadeIn 0.5s ease; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* Mobile responsiveness */
     @media (max-width: 500px) {
       .big-title { font-size: 2.5rem; }
       .header h1 { font-size: 1.5rem; }
@@ -177,17 +93,14 @@
 <body>
   <div class="container">
     <div class="big-title">TeslaScripts</div>
-
     <div class="header">
       <h1>TeslaScripts</h1>
       <p>Thank You For Your Support!</p>
     </div>
 
     <p>Step 1: Click the button below to visit our YouTube channel and unlock your TeslaScripts content.</p>
-
     <div id="progress-text">Progress: 0/1</div>
     <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-
     <button id="subscribeBtn" class="btn">Go to Channel & Subscribe</button>
 
     <div id="hidden-content">
@@ -210,9 +123,9 @@
     const progressText = document.getElementById("progress-text");
     const downloadLink = document.getElementById("downloadLink");
 
-    // Step 1: Visit YouTube channel
+    // Step 1: YouTube subscribe button
     subscribeBtn.addEventListener("click", () => {
-      window.open(YT, "_blank"); 
+      window.open(YT, "_blank");
       subscribeBtn.disabled = true;
 
       let width = 0;
@@ -221,25 +134,32 @@
           clearInterval(interval);
           progressText.textContent = "Progress: 1/1";
           subscribeBtn.textContent = "Completed";
-
           hiddenContent.style.display = "block";
           downloadLink.style.display = "inline-block"; 
         } else {
           width += 1; 
           progressBar.style.width = Math.min(width, 100) + "%";
         }
-      }, 100); 
+      }, 100);
     });
 
-    // Step 2: Trigger AdMaven content locker on Get Script click
+    // Step 2: Optimized Get Script button
     downloadLink.addEventListener("click", (e) => {
       e.preventDefault(); 
       if (window.AdMavenPlacement) {
-        window.AdMavenPlacement.open("BqjwErdw8"); 
+        window.AdMavenPlacement.open("BqjwErdw8");
       }
+      // Ensure redirect always happens even if AdMaven fails
       setTimeout(() => {
         window.location.href = TARGET;
-      }, 2000); 
+      }, 2000);
+    });
+
+    // Optional: Push notification opt-in
+    window.addEventListener("load", () => {
+      if (window.AdMavenPush) {
+        window.AdMavenPush.init();
+      }
     });
   </script>
 </body>
