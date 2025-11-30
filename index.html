@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>TeslaScripts</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
@@ -14,11 +15,13 @@ body {
   font-family: 'Poppins', sans-serif;
   background: radial-gradient(circle at top, #1a0b2e, #4b0b65, #8a0bb7, #ff5ee0);
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   padding: 1rem;
+  overflow: hidden;
   position: relative;
-  overflow-x: hidden;  /* horizontalni scroll blokiran */
-  overflow-y: auto;    /* vertikalni scroll dozvoljen */
 }
 
 .container {
@@ -33,7 +36,6 @@ body {
   text-align: center;
   border: 2px solid rgba(255,255,255,0.2);
   z-index: 1;
-  margin-bottom: 80px; /* prostor za fiksirani banner */
 }
 
 .big-title {
@@ -50,7 +52,13 @@ body {
   padding: 1rem 0.5rem;
   margin-bottom: 1rem;
 }
-.header h1 { font-size: 1.8rem; font-weight: 700; color: #ff8cff; margin-bottom: 0.2rem; letter-spacing: 1.5px; }
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff8cff;
+  margin-bottom: 0.2rem;
+  letter-spacing: 1.5px;
+}
 .header p { font-size: 1rem; font-weight: 500; color: #d0a0ff; }
 
 #progress-text { margin-bottom: 1rem; font-weight: 600; color: #ffb3ff; }
@@ -105,11 +113,11 @@ body {
   .big-title { font-size: 2.5rem; }
   .header h1 { font-size: 1.5rem; }
   .btn, .download-btn { width: 90%; padding: 1em; font-size: 1rem; }
+  .container { padding: 1.5rem; }
 }
 </style>
 </head>
 <body>
-
 <div class="container">
   <div class="big-title">TeslaScripts</div>
   <div class="header">
@@ -170,34 +178,7 @@ downloadLink.addEventListener("click", (e) => {
 });
 </script>
 
-<!-- Popunder & Social scripts -->
 <script type='text/javascript' src='//pl28164419.effectivegatecpm.com/83/bf/f5/83bff5c396bc45b91cae2184ad9fb3f7.js'></script>
-<script type='text/javascript' src='//pl28164564.effectivegatecpm.com/94/a5/fc/94a5fc75ccbc240c311eb88ab647408d.js'></script>
-<script type='text/javascript' src='//inspiredcataloguehometown.com/83/bf/f5/83bff5c396bc45b91cae2184ad9fb3f7.js'></script>
-
-<!-- HighPerformanceFormat Banner -->
-<div id="ad-container" style="
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000; /* manji od popundera */
-  text-align: center;
-  width: 100%;
-  max-width: 468px;
-  height: 60px;
-  background: transparent;
-"></div>
-<script type="text/javascript">
-	atOptions = {
-		'key' : '2b7c60dbe8200b4f6f2a07030587b180',
-		'format' : 'iframe',
-		'height' : 60,
-		'width' : 468,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/2b7c60dbe8200b4f6f2a07030587b180/invoke.js"></script>
 
 </body>
 </html>
