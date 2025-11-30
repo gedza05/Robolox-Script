@@ -17,11 +17,9 @@ body {
   color: #fff;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
   padding: 1rem;
-  overflow: hidden;
-  position: relative;
 }
 
 .container {
@@ -35,7 +33,7 @@ body {
   box-shadow: 0 10px 35px rgba(0,0,0,0.5);
   text-align: center;
   border: 2px solid rgba(255,255,255,0.2);
-  z-index: 1;
+  margin-bottom: 20px; /* prostor ispod za banner */
 }
 
 .big-title {
@@ -114,7 +112,8 @@ body {
   .big-title { font-size: 2.5rem; }
   .header h1 { font-size: 1.5rem; }
   .btn, .download-btn { width: 90%; padding: 1em; font-size: 1rem; }
-  .container { padding: 1.5rem; padding-bottom: 80px; } /* prostor za fiksirani banner */
+  .container { padding: 1.5rem; }
+  #ad-container iframe { width: 320px !important; height: 50px !important; }
 }
 </style>
 </head>
@@ -184,18 +183,8 @@ downloadLink.addEventListener("click", (e) => {
 <script type='text/javascript' src='//pl28164564.effectivegatecpm.com/94/a5/fc/94a5fc75ccbc240c311eb88ab647408d.js'></script>
 <script type='text/javascript' src='//inspiredcataloguehometown.com/83/bf/f5/83bff5c396bc45b91cae2184ad9fb3f7.js'></script>
 
-<!-- HighPerformanceFormat Banner (dole, optimizovan za mobilne) -->
-<div id="ad-container" style="
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9999;
-  text-align: center;
-  height: 60px;
-  max-width: 100%;
-  background: transparent;
-"></div>
+<!-- HighPerformanceFormat Banner (ispod sadržaja, mobilno optimizovan) -->
+<div id="ad-container" style="width:100%; max-width:468px; margin:20px auto 0 auto; text-align:center; height:60px; background:transparent;"></div>
 <script type="text/javascript">
 	atOptions = {
 		'key' : '2b7c60dbe8200b4f6f2a07030587b180',
