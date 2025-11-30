@@ -17,10 +17,10 @@ body {
   color: #fff;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* sadržaj od vrha */
+  align-items: center;
   min-height: 100vh;
   padding: 1rem;
-  overflow-y: auto; /* omogućava skrolovanje */
+  overflow: hidden;
   position: relative;
 }
 
@@ -29,7 +29,7 @@ body {
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(20px);
   border-radius: 25px;
-  padding: 2rem 2.5rem 100px 2.5rem; /* dodat padding-bottom za prostor za banner */
+  padding: 2rem 2.5rem;
   max-width: 480px;
   width: 100%;
   box-shadow: 0 10px 35px rgba(0,0,0,0.5);
@@ -80,8 +80,6 @@ body {
   transition: transform 0.18s ease, opacity 0.25s ease;
   margin: 8px 6px;
   text-decoration: none;
-  z-index: 2; /* dugme iznad banner-a */
-  position: relative;
 }
 .btn:hover:not(:disabled) { transform: translateY(-2px); opacity: 0.95; }
 .btn:disabled { opacity: 0.5; cursor: default; }
@@ -97,8 +95,6 @@ body {
   font-size: 1.1rem;
   text-decoration: none;
   transition: transform 0.2s ease, opacity 0.3s ease;
-  z-index: 2; /* dugme iznad banner-a */
-  position: relative;
 }
 .download-btn:hover { transform: translateY(-2px); opacity: 0.9; }
 
@@ -113,11 +109,12 @@ body {
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
+/* Mobilna optimizacija */
 @media (max-width: 500px) {
   .big-title { font-size: 2.5rem; }
   .header h1 { font-size: 1.5rem; }
   .btn, .download-btn { width: 90%; padding: 1em; font-size: 1rem; }
-  .container { padding: 1.5rem 1.5rem 120px 1.5rem; } /* više prostora za banner */
+  .container { padding: 1.5rem; padding-bottom: 80px; } /* prostor za fiksirani banner */
 }
 </style>
 </head>
@@ -182,21 +179,22 @@ downloadLink.addEventListener("click", (e) => {
 });
 </script>
 
-<!-- Popunder Skripte -->
+<!-- Ads -->
 <script type='text/javascript' src='//pl28164419.effectivegatecpm.com/83/bf/f5/83bff5c396bc45b91cae2184ad9fb3f7.js'></script>
 <script type='text/javascript' src='//pl28164564.effectivegatecpm.com/94/a5/fc/94a5fc75ccbc240c311eb88ab647408d.js'></script>
 <script type='text/javascript' src='//inspiredcataloguehometown.com/83/bf/f5/83bff5c396bc45b91cae2184ad9fb3f7.js'></script>
 
-<!-- HighPerformanceFormat Banner (fiksiran dole) -->
+<!-- HighPerformanceFormat Banner (dole, optimizovan za mobilne) -->
 <div id="ad-container" style="
   position: fixed;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1; /* niži nivo od dugmadi */
-  text-align:center;
-  background: transparent;
+  z-index: 9999;
+  text-align: center;
   height: 60px;
+  max-width: 100%;
+  background: transparent;
 "></div>
 <script type="text/javascript">
 	atOptions = {
