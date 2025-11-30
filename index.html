@@ -4,13 +4,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>TeslaScripts</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
   font-family: 'Poppins', sans-serif;
   background: radial-gradient(circle at top, #1a0b2e, #4b0b65, #8a0bb7, #ff5ee0);
@@ -20,9 +17,9 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 1rem;
+  overflow: hidden;
   position: relative;
 }
-
 .container {
   position: relative;
   background: rgba(255,255,255,0.05);
@@ -36,93 +33,44 @@ body {
   border: 2px solid rgba(255,255,255,0.2);
   z-index: 1;
 }
-
-.big-title {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #ff8cff;
-  margin-bottom: 0.3rem;
-  text-shadow: 0 0 15px #ff79ff, 0 0 30px #ff00f7;
-}
-
-.header {
-  border: 3px double rgba(255,255,255,0.5);
-  border-radius: 15px;
-  padding: 1rem 0.5rem;
-  margin-bottom: 1rem;
-}
-.header h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ff8cff;
-  margin-bottom: 0.2rem;
-  letter-spacing: 1.5px;
-}
+.big-title { font-size: 3rem; font-weight: 800; color: #ff8cff; margin-bottom: 0.3rem; text-shadow: 0 0 15px #ff79ff, 0 0 30px #ff00f7; }
+.header { border: 3px double rgba(255,255,255,0.5); border-radius: 15px; padding: 1rem 0.5rem; margin-bottom: 1rem; }
+.header h1 { font-size: 1.8rem; font-weight: 700; color: #ff8cff; margin-bottom: 0.2rem; letter-spacing: 1.5px; }
 .header p { font-size: 1rem; font-weight: 500; color: #d0a0ff; }
-
 #progress-text { margin-bottom: 1rem; font-weight: 600; color: #ffb3ff; }
-
 .progress { background: rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; height: 14px; margin-bottom: 1rem; width: 100%; }
 .progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, #ff9fff, #ff00f7); transition: width 0.4s ease; }
-
-.btn {
-  display: inline-block;
-  background: linear-gradient(90deg, #ff00f7, #ff79ff);
-  color: #fff;
-  border: none;
-  padding: 1em 2em;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-  transition: transform 0.18s ease, opacity 0.25s ease;
-  margin: 8px 6px;
-  text-decoration: none;
-}
+.btn { display: inline-block; background: linear-gradient(90deg, #ff00f7, #ff79ff); color: #fff; border: none; padding: 1em 2em; border-radius: 12px; font-weight: 600; font-size: 1.1rem; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.4); transition: transform 0.18s ease, opacity 0.25s ease; margin: 8px 6px; text-decoration: none; }
 .btn:hover:not(:disabled) { transform: translateY(-2px); opacity: 0.95; }
 .btn:disabled { opacity: 0.5; cursor: default; }
-
-.download-btn {
-  display: none;
-  margin-top: 1em;
-  padding: 1em 2em;
-  background: linear-gradient(90deg, #ff79ff, #ff00f7);
-  color: #fff;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: transform 0.2s ease, opacity 0.3s ease;
-}
+.download-btn { display: none; margin-top: 1em; padding: 1em 2em; background: linear-gradient(90deg, #ff79ff, #ff00f7); color: #fff; border-radius: 12px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: transform 0.2s ease, opacity 0.3s ease; }
 .download-btn:hover { transform: translateY(-2px); opacity: 0.9; }
-
-#hidden-content {
-  display: none;
-  margin-top: 1.5em;
-  background: rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 1rem;
-  animation: fadeIn 0.5s ease;
-}
-
+#hidden-content { display: none; margin-top: 1.5em; background: rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem; animation: fadeIn 0.5s ease; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-@media (max-width: 500px) {
-  .big-title { font-size: 2.5rem; }
-  .header h1 { font-size: 1.5rem; }
-  .btn, .download-btn { width: 90%; padding: 1em; font-size: 1rem; }
-  .container { padding: 1.5rem; }
-}
+@media (max-width: 500px) { .big-title { font-size: 2.5rem; } .header h1 { font-size: 1.5rem; } .btn, .download-btn { width: 90%; padding: 1em; font-size: 1rem; } .container { padding: 1.5rem; } }
 </style>
 </head>
 <body>
 
-<!-- Fiksirani banner gore -->
-<div id="ad-container" style="position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 9999; background: transparent; text-align:center;">
-<script type="text/javascript" src="//www.highperformanceformat.com/2b7c60dbe8200b4f6f2a07030587b180/invoke.js"></script>
-</div>
+<!-- 1. Popunder -->
+<script type='text/javascript' src='//inspiredcataloguehometown.com/83/bf/f5/83bff5c396bc45b91cae2184ad9fb3f7.js'></script>
 
+<!-- 2. Novi ad / iframe oglas -->
+<script type="text/javascript"> 
+	atOptions = {
+		'key' : '2b7c60dbe8200b4f6f2a07030587b180',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//inspiredcataloguehometown.com/2b7c60dbe8200b4f6f2a07030587b180/invoke.js"></script>
+
+<!-- 3. Social bar / dodatna skripta -->
+<script type='text/javascript' src='//inspiredcataloguehometown.com/94/a5/fc/94a5fc75ccbc240c311eb88ab647408d.js'></script>
+
+<!-- Glavni sadržaj -->
 <div class="container">
   <div class="big-title">TeslaScripts</div>
   <div class="header">
@@ -182,11 +130,6 @@ downloadLink.addEventListener("click", (e) => {
   setTimeout(() => { window.location.href = TARGET; }, 2000);
 });
 </script>
-
-<!-- Popunder & Social Bar skripti -->
-<script type='text/javascript' src='//pl28164419.effectivegatecpm.com/83/bf/f5/83bff5c396bc45b91cae2184ad9fb3f7.js'></script>
-<script type='text/javascript' src='//pl28164564.effectivegatecpm.com/94/a5/fc/94a5fc75ccbc240c311eb88ab647408d.js'></script>
-<script type='text/javascript' src='//inspiredcataloguehometown.com/83/bf/f5/83bff5c396bc45b91cae2184ad9fb3f7.js'></script>
 
 </body>
 </html>
