@@ -109,11 +109,12 @@ body {
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
+/* Mobilna optimizacija */
 @media (max-width: 500px) {
   .big-title { font-size: 2.5rem; }
   .header h1 { font-size: 1.5rem; }
   .btn, .download-btn { width: 90%; padding: 1em; font-size: 1rem; }
-  .container { padding: 1.5rem; }
+  .container { padding: 1.5rem; padding-bottom: 80px; } /* prostor za fiksirani banner */
 }
 </style>
 </head>
@@ -178,16 +179,23 @@ downloadLink.addEventListener("click", (e) => {
 });
 </script>
 
-<!-- EffectiveGate CPM Script 1 -->
+<!-- Ads -->
 <script type='text/javascript' src='//pl28164419.effectivegatecpm.com/83/bf/f5/83bff5c396bc45b91cae2184ad9fb3f7.js'></script>
-
-<!-- EffectiveGate CPM Script 2 -->
 <script type='text/javascript' src='//pl28164564.effectivegatecpm.com/94/a5/fc/94a5fc75ccbc240c311eb88ab647408d.js'></script>
-
-<!-- InspiredCatalogue Script -->
 <script type='text/javascript' src='//inspiredcataloguehometown.com/83/bf/f5/83bff5c396bc45b91cae2184ad9fb3f7.js'></script>
 
-<!-- HighPerformanceFormat Banner (fiksiran dole) -->
+<!-- HighPerformanceFormat Banner (dole, optimizovan za mobilne) -->
+<div id="ad-container" style="
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  text-align: center;
+  height: 60px;
+  max-width: 100%;
+  background: transparent;
+"></div>
 <script type="text/javascript">
 	atOptions = {
 		'key' : '2b7c60dbe8200b4f6f2a07030587b180',
@@ -197,9 +205,7 @@ downloadLink.addEventListener("click", (e) => {
 		'params' : {}
 	};
 </script>
-<div id="ad-container" style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 9999; background: transparent; text-align:center;">
 <script type="text/javascript" src="//www.highperformanceformat.com/2b7c60dbe8200b4f6f2a07030587b180/invoke.js"></script>
-</div>
 
 </body>
 </html>
